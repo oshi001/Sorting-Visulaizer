@@ -1,0 +1,136 @@
+
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: bolder;
+}
+body{
+    overflow: hidden;
+}
+
+nav{
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+
+}
+
+/* col1--->blue */
+.col1{
+    background-color:blue;
+    padding-left: 10px;
+    padding-right: 10px;
+    color:white;
+    border-radius:10px ;
+    border:2px solid black;
+}
+.col2{
+    background-color:green;
+    padding-left: 10px;
+    padding-right: 10px;
+    color:white;
+    border-radius:10px ;
+    border:2px solid black;
+}
+.col3{
+    background-color:red;
+    padding-left: 5px;
+    padding-right: 5px;
+    color:white;
+    border-radius:10px ;
+    border:2px solid black;
+}
+.col4{
+    background-color:orange;
+    padding-left: 10px;
+    padding-right: 10px;
+    color:white;
+    border-radius:10px ;
+    border:2px solid black;
+}
+.col5{
+    background-color:yellow;
+    padding-left: 10px;
+    padding-right: 10px;
+    color:BLACK;
+    border-radius:10px ;
+    border:2px solid black;
+}
+.col6{
+    background-color:lightgreen;
+    padding-left: 10px;
+    padding-right: 10px;
+    color:white;
+    border-radius:10px ;
+    border:2px solid black;
+}
+
+label{
+    font-size: 20px;
+}
+
+h1{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 52px;
+}
+
+body{
+    /* background-color: blueviolet; */
+    background-color: #D9AFD9;
+background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+
+}
+button{
+    
+    /* padding: 10px 20px 10px 20px; */
+    width: 96px;
+    height: 49px;
+    border-radius: 17px;
+    text-decoration: none;
+    
+}
+
+button:hover{
+    background: #893cfc;
+    background-image: -webkit-linear-gradient(top, #893cfc, #d134d9);
+    background-image: -moz-linear-gradient(top, #893cfc, #d134d9);
+    background-image: -ms-linear-gradient(top, #893cfc, #d134d9);
+    background-image: -o-linear-gradient(top, #893cfc, #d134d9);
+    background-image: linear-gradient(to bottom, #893cfc, #d134d9);
+    text-decoration: none;
+}
+
+.header{
+    border-bottom: 2px solid black;
+    /* border: 2px solid black; */
+    /* height: 50px; */
+    background-color:bisque;
+}
+
+.flex-container{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 500px;
+    justify-content: center;
+    transition: 2s all ease;
+}
+
+.flex-item{
+    background: cyan;
+    border: 1pt solid black;
+    width: 20px;
+    transition: 0.1s all ease;
+    padding:absolute;
+}
+.block_id {
+    position: absolute;
+    color: black;
+    margin-top: -20px;
+    width: 100%;
+    text-align: center;
+}
+
+
