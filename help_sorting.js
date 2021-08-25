@@ -68,8 +68,51 @@ arraySize.addEventListener('click', function () {
 let simuSpeed = document.querySelector('#simu_speed');
 simuSpeed.addEventListener('click', function () {
     delay = 350 - parseInt(simuSpeed.value);
+
 });
 
+
+
+document.getElementById("pa")
+    .setAttribute("disabled", "true")
+var stats = 0;
+
+let ispause = false;
+function pauser() {
+    return new Promise(resolve => {
+        let playbuttonclick = function () {
+            // document.getElementById("pa")
+            //     .removeAttribute("disabled")
+
+            // document.getElementById("pl")
+            //     .setAttribute("disabled", "true")
+
+            document.getElementById("pa").innerHTML = "Pause";
+            document.getElementById("pa")
+                .removeEventListener("click",
+                    playbuttonclick);
+
+            stats = 0;
+            resolve("resolved");
+        }
+        document.getElementById("pa")
+            .addEventListener("click", playbuttonclick)
+    })
+}
+
+document.getElementById("pa")
+    .addEventListener("click", function () {
+
+        document.getElementById("pa").innerHTML = "Play";
+        stats = 1;
+
+        // document.getElementById("pa")
+        //     .setAttribute("disabled", "true")
+
+        // document.getElementById("pl")
+        //     .removeAttribute("disabled")
+
+    })
 
 let array = [];
 

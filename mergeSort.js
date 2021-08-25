@@ -15,6 +15,7 @@ async function Merge(bars, l, mid, r) {
     for (var i = 0; i < n1; i++) {
         await waitforme(delay);
         L[i] = bars[l + i].style.height;
+        if (stats == 1) await pauser();
         bars[l + i].style.background = 'orange';
     }
 
@@ -22,6 +23,7 @@ async function Merge(bars, l, mid, r) {
     for (var i = 0; i < n2; i++) {
         await waitforme(delay);
         R[i] = bars[mid + 1 + i].style.height;
+        if (stats == 1) await pauser();
         bars[mid + 1 + i].style.background = 'yellow';
     }
 
@@ -31,6 +33,7 @@ async function Merge(bars, l, mid, r) {
         if (parseInt(L[i]) <= parseInt(R[j])) {
 
             bars[k].style.height = L[i];
+            if (stats == 1) await pauser();
             bars[k].style.background = 'lightgreen';
             k++;
 
@@ -39,6 +42,7 @@ async function Merge(bars, l, mid, r) {
         else {
 
             bars[k].style.height = R[j];
+            if (stats == 1) await pauser();
             bars[k].style.background = 'lightgreen';
             k++;
             j++;
@@ -49,6 +53,7 @@ async function Merge(bars, l, mid, r) {
         await waitforme(delay);
 
         bars[k].style.height = L[i++];
+        if (stats == 1) await pauser();
         bars[k].style.background = 'lightgreen';
         k++;
     }
@@ -56,7 +61,9 @@ async function Merge(bars, l, mid, r) {
         await waitforme(delay);
 
         bars[k].style.height = R[j++];
+        if (stats == 1) await pauser();
         bars[k].style.background = 'lightgreen';
+
         k++;
     }
 
@@ -94,6 +101,10 @@ merging.addEventListener('click', async function () {
     disableSortingBtn();
     disableNewArrayBtn();
     disableSizeslider();
+
+    //enable pause button
+    document.getElementById("pa")
+        .removeAttribute("disabled");
 
     await MergeSort(bars, l, r);
     for (var i = 0; i <= r; i++) {

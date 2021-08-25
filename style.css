@@ -12,7 +12,7 @@ body{
 
 nav{
     display: grid;
-    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 2fr;
 
 }
 
@@ -99,6 +99,7 @@ button:hover{
     background-image: -o-linear-gradient(top, #893cfc, #d134d9);
     background-image: linear-gradient(to bottom, #893cfc, #d134d9);
     text-decoration: none;
+    color: antiquewhite;
 }
 
 .header{

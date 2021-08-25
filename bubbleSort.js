@@ -17,15 +17,20 @@ async function BubbleSort() {
                 await waitforme(delay);
                 swap(ele[j], ele[j + 1]);
             }
-
+            if (stats == 1) await pauser();
             //giving back there original color
             ele[j].style.background = 'cyan';
             ele[j + 1].style.background = 'cyan';
+            // await waitforme(100);
+
         }
 
         ele[ele.length - i - 1].style.background = 'green';
+        // await waitforme(100);
+        if (stats == 1) await pauser();
     }
     ele[0].style.background = 'green';
+
 }
 // async function(){
 //     await BubbleSort();
@@ -40,6 +45,10 @@ bubble.addEventListener('click', async function () {
     disableSortingBtn();
     disableNewArrayBtn();
     disableSizeslider();
+
+    //enable pause button
+    document.getElementById("pa")
+        .removeAttribute("disabled");
 
     await BubbleSort();
     enableSortingBtn();

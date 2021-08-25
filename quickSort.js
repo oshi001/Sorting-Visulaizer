@@ -7,6 +7,7 @@ async function partition(bars, low, high) {
     var pivot = bars[high].style.height;
 
     //PIVOT ELEMENT -->RED
+    if (stats == 1) await pauser();
     bars[high].style.background = 'red';
 
     var i = low - 1;
@@ -15,6 +16,7 @@ async function partition(bars, low, high) {
 
 
         //current element
+        if (stats == 1) await pauser();
         bars[j].style.background = 'blue';
 
         await waitforme(delay);
@@ -25,17 +27,20 @@ async function partition(bars, low, high) {
 
 
             swap(bars[i], bars[j]);
+            if (stats == 1) await pauser();
             bars[i].style.background = 'orange';
             bars[j].style.background = 'orange';
             //pause
             await waitforme(delay);
         }
         else {
+            if (stats == 1) await pauser();
             bars[j].style.background = 'yellow';
         }
     }
     swap(bars[i + 1], bars[high]);
     await waitforme(delay);
+    if (stats == 1) await pauser();
     bars[high].style.background = 'yellow';
 
     return i + 1;
@@ -73,6 +78,9 @@ quick.addEventListener('click', async function () {
     disableSortingBtn();
     disableNewArrayBtn();
     disableSizeslider();
+    //enable pause button
+    document.getElementById("pa")
+        .removeAttribute("disabled");
 
     await QuickSort(bars, low, high);
     for (let i = 0; i < bars.length; i++) {

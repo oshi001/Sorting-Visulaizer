@@ -7,6 +7,7 @@ async function InsertionSort() {
         let key = bars[i].style.height;
         var j = i - 1;
         bars[i].style.background = 'blue';
+        if (stats == 1) await pauser();
         await waitforme(delay);
         /* Move elements of arr[0..i-1], that are
         greater than key, to one position ahead
@@ -16,11 +17,13 @@ async function InsertionSort() {
             bars[j + 1].style.height = bars[j].style.height;
 
             bars[j].style.background = 'blue';
+            if (stats == 1) await pauser();
 
             j--;
             await waitforme(delay);
             for (let k = i; k >= 0; k--) {
                 bars[k].style.background = 'green';
+                if (stats == 1) await pauser();
             }
         }
         bars[j + 1].style.height = key;
@@ -37,6 +40,11 @@ insertion.addEventListener('click', async function () {
     disableSortingBtn();
     disableNewArrayBtn();
     disableSizeslider();
+
+    //enable pause button
+    document.getElementById("pa")
+        .removeAttribute("disabled");
+
 
     await InsertionSort();
     enableSortingBtn();

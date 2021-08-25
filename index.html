@@ -34,17 +34,32 @@
 
                 <div>
                     <label for="simu_speed">Speed</label>
-                    <input type="range" min="100" max="320" value="50" class="slider" id="simu_speed">
+                    <input type="range" min="20" max="350" value="50" class="slider" id="simu_speed">
                 </div>
 
             </div>
 
+            <!-- <div class="play pause">
+                <button id="pl">Play</button>
+            </div> -->
+            <div class="play pause">
+                <button id="pa">Pause</button>
+            </div>
+            <button onclick="locationreload()">
+                Reset
+            </button>
+
             <div class="sorting_btn gap-2 d-sm-flex justify-content-end">
-                <button class="button btn-outline-primary  BubbleS">Bubble Sort</button>
-                <button class="button btn-outline-primary   InsertionS">Insertion Sort</button>
-                <button class="button btn-outline-primary  SelectionS">Selection Sort</button>
-                <button class="button btn-outline-primary   MergeS">Merge Sort</button>
-                <button class="button btn-outline-primary   QuickS">Quick Sort</button>
+                <button onMouseOver="this.style.color='black'" onMouseOut="this.style.color='blue'"
+                    class="button btn-outline-primary  BubbleS">Bubble Sort</button>
+                <button onMouseOver="this.style.color='black'" onMouseOut="this.style.color='Blue'"
+                    class="button btn-outline-primary   InsertionS">Insertion Sort</button>
+                <button onMouseOver="this.style.color='black'" onMouseOut="this.style.color='blue'"
+                    class="button btn-outline-primary  SelectionS">Selection Sort</button>
+                <button onMouseOver="this.style.color='black'" onMouseOut="this.style.color='blue'"
+                    class="button btn-outline-primary   MergeS">Merge Sort</button>
+                <button onMouseOver="this.style.color='black'" onMouseOut="this.style.color='blue'"
+                    class="button btn-outline-primary   QuickS">Quick Sort</button>
             </div>
         </nav>
         <div class="Instruction" align='center'>This Visualizer will help you to understand different types of sorting!!
@@ -73,6 +88,12 @@
     <script src="selectionSort.js"></script>
     <script src="mergeSort.js"></script>
     <script src="quickSort.js"></script>
+    <script>
+        function locationreload() {
+            location.reload();
+
+        }
+    </script>
 </body>
 
 </html>
